@@ -6,7 +6,8 @@ No need of separate CI CD tools like jenkins.
 Github manages the underlying infrastructure.
 Execute tasks in virtual environment.
 Git Repo -> Actions tab 
-repo-root/.github/workflows/name.yaml 
+
+repo-root/.github/workflows/name.yaml   -> Workflows are created in this path. 
 
 It consists of,
     workflow
@@ -16,10 +17,43 @@ It consists of,
 
 In CI-CD, it is of 
     commit -> pull request -> review -> CI steps -> approve -> Merge -> CD Steps -> Deploy 
-    
+
+In free account, get 2000 action minutes/month and 500mb of package storage.
+
 -----------------------------------------------------------------------------------------------------------
 GitHub Actions - Core Concepts:
 -----------------------------------------------------------------------------------------------------------
 
+There are 3 main components,
+    name - Workflow
+    jobs - List of jobs
+    steps - list of steps under the job.
 
+    Jobs and Steps are executed sequentially. 
+
+    name: Sample Workflow                   -> Workflow 
+    on: [push]                              -> Trigger 
+    jobs:               
+      build:                                -> Job 
+        name: Build
+        runs-on: ubuntu-latest              -> Github hosted Runner 
+        steps:                              -> Steps 
+        - name: Checkout repository
+          uses: actions/checkout@v2         -> actions are prebuilt for the specific tasks and used. 
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '14'    
+        - name: Install dependencies
+          run: npm install    
+        - name: Build project
+          run: npm run build    
+        - name: Run tests
+          run: npm test
+    
+
+Create first workflow:
+        1. Create the directory under root-repository/.github/worklows/example.yaml 
+        2. 
+        
 
