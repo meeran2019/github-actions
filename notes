@@ -54,6 +54,17 @@ There are 3 main components,
 
 Create first workflow:
         1. Create the directory under root-repository/.github/worklows/example.yaml 
-        2. 
-        
+        It support both .yml or .yaml format.
+        NOTE: Github hosted or Self hosted Runner is on separate machine and by default does not have access or download the source repo. It needs to checkout separately.
+
+GitHub Actions:
+        It is prebuild workflow which designed for the specific functionality.
+        It is created by community or github or github partner.
+        It can be found in below URL,
+            https://github.com/marketplace?query=sort%3Apopularity-desc&type=actions&verification=verified_creator
+        Choose verified creator which is validated by github.
+        It can be defined based on version, branch, SHAs value.
+        uses: actions/checkout@v2   or actions/checkout@main or actions/checkout@HETWKNASNUWYQUWQOQW
+
+Configure Checkout Action:
 

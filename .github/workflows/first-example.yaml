@@ -8,6 +8,10 @@ jobs:
               run: echo "my first workflow"
             - name: second message
               run: echo "my second message"
+            - name: checkout code
+              uses: actions/checkout@v4
+              with:
+                sparse-checkout: .
             - name: read notes 
               run: cat README.md
 
