@@ -8,7 +8,18 @@ Execute tasks in virtual environment.
 Git Repo -> Actions tab 
 repo-root/.github/workflows/name.yaml 
 
+It consists of,
+    workflow
+    Jobs
+    Steps 
+    Runner - Github hosted and Selfhosted.
 
+In CI-CD, it is of 
+    commit -> pull request -> review -> CI steps -> approve -> Merge -> CD Steps -> Deploy 
+    
+-----------------------------------------------------------------------------------------------------------
+GitHub Actions - Core Concepts:
+-----------------------------------------------------------------------------------------------------------
 
 
 
