@@ -67,4 +67,9 @@ GitHub Actions:
         uses: actions/checkout@v2   or actions/checkout@main or actions/checkout@HETWKNASNUWYQUWQOQW
 
 Configure Checkout Action:
+        From github market place, select the checkout actions.
+          https://github.com/marketplace/actions/checkout
+        By default without any parameter, it downloads all the files under the repo.
 
+Multi Line Commands and Executing 3rd Party Libraries:
+                
