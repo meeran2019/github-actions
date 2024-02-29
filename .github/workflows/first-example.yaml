@@ -9,6 +9,6 @@ jobs:
             - name: second message
               run: echo "my second message"
             - name: read notes 
-              run: cat notes
-              
+              run: cat README.md
+
 
