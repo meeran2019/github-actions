@@ -5,10 +5,10 @@ Introduction:
 No need of separate CI CD tools like jenkins.
 Github manages the underlying infrastructure.
 Execute tasks in virtual environment.
-
 Git Repo -> Actions tab 
-
 repo-root/.github/workflows/name.yaml 
+
+
 
 
 
