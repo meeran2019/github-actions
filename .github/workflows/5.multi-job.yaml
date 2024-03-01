@@ -1,5 +1,5 @@
 ## This is fifth example on github actions.
-## Here focussed on running multiple jobs.
+## Here focussed on running multiple jobs..
 
 name: 5. running multiple jobs
 on: push
