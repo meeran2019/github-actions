@@ -1,7 +1,7 @@
 ## This is fourth example on github actions.
 ## Here focussed on running shell scripts.
 
-name: execute shell script workflow
+name: 4. execute shell script workflow
 on: push
 jobs:
     execute-script-job:

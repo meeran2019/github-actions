@@ -1,7 +1,7 @@
 ## This is second example on github actions.
 ## Here focussed on multi line run commands
 
-name: multi line workflow
+name: 2. multi line run workflow
 on: push
 jobs:
     multiline-job:

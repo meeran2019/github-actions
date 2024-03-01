@@ -1,7 +1,7 @@
 ## This is first example on github actions.
 ## Here focussed on workflow, job, steps, runs-on, run and uses.
 
-name: my first workflow
+name: 1. my first workflow
 on: push
 jobs:
     first-job:

@@ -1,7 +1,7 @@
 ## This is third example on github actions.
 ## Here focussed on running multiple commands.
 
-name: execute multiple commands workflow
+name: 3. execute multiple commands workflow
 on: push
 jobs:
     execute-command-job:
