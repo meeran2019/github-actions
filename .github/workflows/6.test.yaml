@@ -1,0 +1,17 @@
+## This is first example on github actions.
+## Here focussed on workflow, job, steps, runs-on, run and uses.
+
+name: 1. my first workflow
+on: push
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: welcome message
+              run: echo "my first workflow"
+            - name: second message
+              run: echo "my second message"
+            - name: checkout code
+              uses: actions/checkout@v4             #It download the FULL repository. 
+            - name: read notes 
+              run: cat README.md
