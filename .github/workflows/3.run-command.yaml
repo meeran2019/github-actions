@@ -1,10 +1,10 @@
 ## This is third example on github actions.
-## Here focussed on running scripts.
+## Here focussed on running multiple commands.
 
-name: execute script workflow
+name: execute multiple commands workflow
 on: push
 jobs:
-    execute-script-job:
+    execute-command-job:
         runs-on: ubuntu-latest
         steps:
             - name: checkout code

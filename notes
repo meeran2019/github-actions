@@ -5,7 +5,8 @@ Introduction:
 No need of separate CI CD tools like jenkins.
 Github manages the underlying infrastructure.
 Execute tasks in virtual environment.
-Git Repo -> Actions tab 
+Git Repo -> Actions tab
+Can enable or disable workflow in github UI.
 
 repo-root/.github/workflows/name.yaml   -> Workflows are created in this path. 
 
@@ -30,6 +31,7 @@ There are 3 main components,
     steps - list of steps under the job.
 
     Jobs and Steps are executed sequentially. 
+    Can enable or disable workflow in github UI.
 
     name: Sample Workflow                   -> Workflow 
     on: [push]                              -> Trigger 
@@ -73,4 +75,10 @@ Configure Checkout Action:
 
 Multi Line Commands and Executing 3rd Party Libraries:
         To execute multiple commands in single run require to use | (pipe symbol)
+        Under .github/workflows, have multiple workflows, based on "on:push", all workflows will be executed whenver there is a commit.        
+        Can enable or disable workflow in github UI.
+
+Execute shell scripts in workflow:
+                
+
         

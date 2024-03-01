@@ -1,0 +1,13 @@
+## This is fourth example on github actions.
+## Here focussed on running shell scripts.
+
+name: execute shell script workflow
+on: push
+jobs:
+    execute-script-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4             # It download the FULL repository. 
+            - name: welcome message
+              run: ./shell-script.sh                # it execute the shell script.
