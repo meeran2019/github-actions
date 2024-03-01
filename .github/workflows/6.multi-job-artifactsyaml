@@ -1,5 +1,5 @@
 ## This is sixth example on github actions.
-## Here focussed on to pass artifacts from one job to another.
+## Here focussed on to pass artifacts from one job to another..
 
 name: 6. to pass artifacts from one job to another.
 on: push
