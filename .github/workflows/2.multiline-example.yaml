@@ -1,0 +1,14 @@
+## This is second example on github actions.
+## Here focussed on multi line run commands
+
+name: multi line workflow
+on: push
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: welcome message
+              run: | 
+                echo "my first workflow"
+                echo "my second message"
+                cat notes 

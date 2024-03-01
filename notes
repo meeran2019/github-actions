@@ -72,4 +72,5 @@ Configure Checkout Action:
         By default without any parameter, it downloads all the files under the repo.
 
 Multi Line Commands and Executing 3rd Party Libraries:
-                
+        To execute multiple commands in single run require to use | (pipe symbol)
+        
