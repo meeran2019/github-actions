@@ -4,13 +4,13 @@
 name: multi line workflow
 on: push
 jobs:
-    first-job:
+    multiline-job:
         runs-on: ubuntu-latest
         steps:
             - name: checkout code
-              uses: actions/checkout@v4             #It download the FULL repository. 
+              uses: actions/checkout@v4             # It download the FULL repository. 
             - name: welcome message
-              run: | 
+              run: |                                # pipe symbol used to run the multiple commands.
                 echo "my first workflow"
                 echo "my second message"
                 cat notes 
