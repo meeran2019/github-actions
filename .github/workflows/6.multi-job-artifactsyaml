@@ -2,7 +2,9 @@
 ## Here focussed on to pass artifacts from one job to another..
 
 name: 6. to pass artifacts from one job to another.
-on: push
+on: 
+  workflow_dispatch:
+  push:
 jobs:
     first-job:                                            # This is first job.
         runs-on: ubuntu-latest
