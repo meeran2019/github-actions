@@ -9,5 +9,7 @@ jobs:
         steps:
             - name: checkout code
               uses: actions/checkout@v4             # It download the FULL repository. 
+            - name: change permission of file
+              run: chmod 777 shell-script.sh
             - name: welcome message
               run: ./shell-script.sh                # it execute the shell script.
