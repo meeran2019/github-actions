@@ -102,3 +102,18 @@ Workflow with Multiple Jobs:
           job3:
             needs: [job1, job2]
 
+Storing workflow data as Artifacts:
+        To pass data between jobs, it require to use the shared action.
+            Upload a Build artifact
+            Download a Build artifact.
+
+        - uses: actions/upload-artifact@v4
+          with:
+            name: my-artifact
+            path: path/to/artifact/world.txt
+
+        - uses: actions/download-artifact@v4
+          with:
+            name: my-artifact
+            path: your/destination/dir
+            
