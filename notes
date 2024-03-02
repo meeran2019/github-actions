@@ -55,11 +55,13 @@ There are 3 main components,
     
 
 Create first workflow:
+
         1. Create the directory under root-repository/.github/worklows/example.yaml 
         It support both .yml or .yaml format.
         NOTE: Github hosted or Self hosted Runner is on separate machine and by default does not have access or download the source repo. It needs to checkout separately.
 
 GitHub Actions:
+
         It is prebuild workflow which designed for the specific functionality.
         It is created by community or github or github partner.
         It can be found in below URL,
@@ -69,16 +71,19 @@ GitHub Actions:
         uses: actions/checkout@v2   or actions/checkout@main or actions/checkout@HETWKNASNUWYQUWQOQW
 
 Configure Checkout Action:
+
         From github market place, select the checkout actions.
           https://github.com/marketplace/actions/checkout
         By default without any parameter, it downloads all the files under the repo.
 
 Multi Line Commands and Executing 3rd Party Libraries:
+
         To execute multiple commands in single run require to use | (pipe symbol)
         Under .github/workflows, have multiple workflows, based on "on:push", all workflows will be executed whenver there is a commit.        
         Can enable or disable workflow in github UI.
 
 Execute shell scripts in workflow:
+
         In same run command, can execute run the script as below,
           run: 
             shell-script.sh  
@@ -88,6 +93,7 @@ Execute shell scripts in workflow:
             shell-script.sh
 
 Workflow with Multiple Jobs:
+
         Each job runs on it own virtual machine.
         Each job virtual machine can be different like mac, windows or linux.
         By default runs in PARALLEL.
@@ -116,4 +122,4 @@ Storing workflow data as Artifacts:
           with:
             name: my-artifact
             path: your/destination/dir
-            
+
