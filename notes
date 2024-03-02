@@ -92,6 +92,8 @@ Execute shell scripts in workflow:
             chmod +x shell-script.sh
             shell-script.sh
 
+-----------------------------------------------------------------------------------------------------------
+
 Workflow with Multiple Jobs:
 
         Each job runs on it own virtual machine.
@@ -246,4 +248,6 @@ Matrix strategy for a job:
             exclude:  
               - key1: value2
                 key2: value3
+
+-----------------------------------------------------------------------------------------------------------
 
