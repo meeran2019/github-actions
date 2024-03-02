@@ -152,9 +152,9 @@ Repository level Secrets:
             can add secrets and variables.
 
         To refer the values,
-            {{ secrets.SECRET_VALUE }}
-            {{ variables.VARIABLE_VALUE}}
+            ${{ secrets.SECRET_VALUE }}
+            ${{ vars.VARIABLE_VALUE}}
 
-        
+
 
         
