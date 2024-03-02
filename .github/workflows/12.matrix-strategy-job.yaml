@@ -16,4 +16,4 @@ jobs:
             - name: first step
               timeout-minutes: 1
               run: | 
-                echo "${{ matrix.fruits }}""
+                echo "${{ matrix.fruits }}"
