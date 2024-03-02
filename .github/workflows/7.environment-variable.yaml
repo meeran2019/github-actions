@@ -5,24 +5,17 @@ name: 7. environment variables.
 on: 
   workflow_dispatch:
   push:
-jobs:
-    first-job:                                            # This is first job.
-        runs-on: ubuntu-latest
-        steps:
-            - name: run first job first step
-              run: echo "run first job first step"
-            - name: create a test file
-              run: touch test.txt
-            - name: upload artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: artifact-name1
-                path: test.txt              
-    second-job:
-        needs: first-job                                  # By default, 2nd job run parallel and separate machine.
+env:
+  WORKFLOW_LEVEL_KEY1: workflow-value1
+  WORKFLOW_LEVEL_KEY2: workflow-value-2
+jobs:              
+    first-job:
+        env:
+          JOB_LEVEL_KEY1: job-value1
+          JOB_LEVEL_KEY2: job-value2
         runs-on: ubuntu-latest                            # needs which is used to add dependency. 
         steps:
-            - name: run second job first step
+            - name: run first job first step
               env:                                        # to define env variable at step level.
                 ENV_COLOR: blue
                 ENV_BIRD: sparrow
@@ -35,3 +28,8 @@ jobs:
                 echo "color is ${ENV_COLOR}_test"
                 echo bird is $ENV_BIRD_test
                 echo bird is ${ENV_BIRD}_test                
+            - name: run first job second step.
+              run: | 
+                echo cloud is $ENV_COLOR
+                echo job level is $JOB_LEVEL_KEY1
+                echo workflow level is $WORKFLOW_LEVEL_KEY1

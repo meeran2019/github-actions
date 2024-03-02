@@ -134,5 +134,9 @@ Working with variables at different level:
             job level
             step level
 
+        It consists of define the variable and refer the variable.
+        Define: Using "env:"
+        Reference: using $VARIABLE_NAME or ${{ env.VARIABLE_NAME }} or ${VARIABLE_NAME}
         
+
         
