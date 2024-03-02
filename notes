@@ -113,6 +113,10 @@ Storing workflow data as Artifacts:
             Upload a Build artifact
             Download a Build artifact.
 
+        Artifacts stored separately and can be used be downloaded separately.
+        By default have retention of 90 days.
+        Size can be 500 mb in free version.
+
         - uses: actions/upload-artifact@v4
           with:
             name: my-artifact
@@ -123,3 +127,12 @@ Storing workflow data as Artifacts:
             name: my-artifact
             path: your/destination/dir
 
+Working with variables at different level:
+
+        Environment variables can be stored at,
+            workflow level
+            job level
+            step level
+
+        
+        
