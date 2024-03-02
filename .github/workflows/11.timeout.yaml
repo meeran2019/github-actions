@@ -31,11 +31,9 @@ jobs:
             - name: first step
               timeout-minutes: 1
               run: | 
-                sleep 2m
+                sleep 50s
                 echo region is ${{ inputs.region}}
             - name: second step
-              run: echo prod or not is ${{ inputs.prod-or-not }}
-            - name: third step
-              run: echo environ is ${{ inputs.environ}}
-            - name: fourth step
-              run: echo vpc-cidr is ${{ inputs.vpc-cidr }}
+              run: | 
+                sleep 90s
+                echo prod or not is ${{ inputs.prod-or-not }}
