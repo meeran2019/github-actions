@@ -28,6 +28,10 @@ jobs:
                 ENV_BIRD: sparrow
               run: |                                      # all these combinations are working.
                 echo "color is $ENV_COLOR"                
-                echo "color is ${ENV_COLOR}_test"
+                echo "color is ${ENV_COLOR}"
                 echo bird is $ENV_BIRD
-                echo bird is ${ENV_BIRD}_test
+                echo bird is ${ENV_BIRD}
+                echo "color is $ENV_COLOR_test"                
+                echo "color is ${ENV_COLOR}_test"
+                echo bird is $ENV_BIRD_test
+                echo bird is ${ENV_BIRD}_test                
