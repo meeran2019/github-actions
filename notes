@@ -159,5 +159,39 @@ Repository level Secrets:
 
 Triggering a workflow:
 
-      
+        https://docs.github.com/en/actions/using-workflows/triggering-a-workflow
+        https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
+        Workflows can be trigger in multiple ways which are not limited to,
+            manually
+            on push (commit)
+
+        "on" is used to trigger the workflow.
+
+        on: push          -> Single event.
+        on: [push, fork]  -> Multiple event.
+
+        push:
+          whenever there is push to any branch of the repo.
+
+        workflow_dispatch: 
+          It is used to trigger manually and pass input values from workflow screen.
+
+            on:
+              workflow_dispatch:
+                inputs:
+                  name:
+                    type: choice
+                    description: Who to greet
+                    options: 
+                    - monalisa
+                    - cschleiden        
+
+          type: It supports string (default), choice, boolean and environment.
+
+          
+
+
+
+
         
