@@ -142,6 +142,8 @@ Working with variables at different level:
         At job level, it is available to all steps with in same job.
         At step level, it is available only within that steps.
 
+        Priority: Step level > Job level > Workflow level.        
+
         
 
         
