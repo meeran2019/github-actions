@@ -20,7 +20,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: artifact-name1
-                path: test-folder/test.txt
+                path: test-folder
     second-job:
         needs: first-job                                  # By default, 2nd job run parallel and separate machine.
         runs-on: ubuntu-latest                            # needs which is used to add dependency. 
