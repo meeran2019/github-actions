@@ -1,0 +1,41 @@
+## This is 11th example on github actions.
+## Here focussed on timeout.
+
+name: 11. timeout
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: 'Enter the region (ex: us-east-1)'
+        required: true
+        default: 'us-east-1'
+      vpc-cidr:
+        description: 'select the vpc (ex: 10.1.1.1/16)'
+        required: false
+        type: choice
+        options:
+          - 10.1.1.1/16
+          - 10.2.2.2/16
+      environ:
+        description: 'Enter the environment'
+        type: environment
+      prod-or-not:
+        description: 'Select whether prod'
+        type: boolean            
+jobs:
+    first-job:
+        timeout-minutes: 2
+        runs-on: ubuntu-latest
+        steps:
+            - name: first step
+              timeout-minutes: 1
+              run: | 
+                sleep 2m
+                echo region is ${{ inputs.region}}
+            - name: second step
+              run: echo prod or not is ${{ inputs.prod-or-not }}
+            - name: third step
+              run: echo environ is ${{ inputs.environ}}
+            - name: fourth step
+              run: echo vpc-cidr is ${{ inputs.vpc-cidr }}
