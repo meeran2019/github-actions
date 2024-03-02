@@ -11,7 +11,7 @@ jobs:
           fail-fast: false                                      # prevent cancel of inprogess job if job fails.
           max-parallel: 2                                       # No of jobs to run parallel at a time.
           matrix:
-            include:                                            # To exclude specific combination. 
+            include:                                            # To include new combination which not maintained in variable.
               - os: ubuntu-latest
                 fruits: apple            
             exclude:                                            # To exclude specific combination. 
@@ -25,3 +25,5 @@ jobs:
               timeout-minutes: 1
               run: | 
                 echo "${{ matrix.fruits }}"
+
+                
