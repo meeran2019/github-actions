@@ -29,7 +29,7 @@ on:
 jobs:
     first-job:
         concurrency: 
-          group: concur-name1
+          group: concur-name
           cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
