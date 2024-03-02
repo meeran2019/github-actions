@@ -9,6 +9,9 @@ jobs:
     template-job:
         strategy:
           matrix:
+            exclude:                                            # To exclude specific combination. 
+              - os: ubuntu-latest
+                fruits: guava
             os: [ubuntu-latest, windows-latest]                 # To declare the matrix variable.
             fruits: [orange, banana, guava] 
         runs-on: ${{ matrix.os }}                               # To use the matrix variable. 
