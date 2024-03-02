@@ -26,7 +26,7 @@ jobs:
               env:                                        # to define env variable at step level.
                 ENV_COLOR: blue
                 ENV_BIRD: sparrow
-              run: |                                      # all these combinations are working.
+              run: |                                      # first 4 combinations are working. ${} must use along with suffix or prefix
                 echo "color is $ENV_COLOR"                
                 echo "color is ${ENV_COLOR}"
                 echo bird is $ENV_BIRD
