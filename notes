@@ -233,6 +233,8 @@ Matrix strategy for a job:
 
         include: to include additional variable which not mentioned in matrix variable.
         exclude: to exclude the existing variable.
+        fail-fast: false (It prevents cancel inprogress jobs if any matrix jobs fail)
+        max-parallel: 2  (no of max parallel jobs to run at a time)
 
           strategy:
             matrix:
@@ -245,4 +247,3 @@ Matrix strategy for a job:
               - key1: value2
                 key2: value3
 
-                

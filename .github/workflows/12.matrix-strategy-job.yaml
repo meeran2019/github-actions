@@ -8,6 +8,8 @@ on:
 jobs:
     template-job:
         strategy:
+          fail-fast: false                                      # prevent cancel of inprogess job if job fails.
+          max-parallel: 2                                       # No of jobs to run parallel at a time.
           matrix:
             include:                                            # To exclude specific combination. 
               - os: ubuntu-latest
