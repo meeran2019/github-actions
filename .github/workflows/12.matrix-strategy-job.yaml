@@ -9,10 +9,11 @@ jobs:
     template-job:
         strategy:
           matrix:
-            os: [ubuntu-latest, windows-latest]                 # To declare the matrix variable. 
+            os: [ubuntu-latest, windows-latest]                 # To declare the matrix variable.
+            fruits: [orange, banana, guava] 
         runs-on: ${{ matrix.os }}                               # To use the matrix variable. 
         steps:
             - name: first step
               timeout-minutes: 1
               run: | 
-                echo test 
+                echo "${{ matrix.fruits }}""

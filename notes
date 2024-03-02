@@ -127,6 +127,8 @@ Storing workflow data as Artifacts:
             name: my-artifact
             path: your/destination/dir
 
+-----------------------------------------------------------------------------------------------------------
+
 variables at different level:
 
         Environment variables can be stored at,
@@ -190,6 +192,8 @@ Triggering a workflow:
           type: It supports string (default), choice, boolean and environment.
           required: true/false  (By default it is false and not mandatory)
 
+-----------------------------------------------------------------------------------------------------------
+
 Job Concurrency:
 
         It ensure single job or workflow runs at a time in same concurrency group.
@@ -206,6 +210,8 @@ Time out:
         It is given at job level or step level or both.
         timeout-minutes: 1
 
+-----------------------------------------------------------------------------------------------------------
+
 Matrix strategy for a job:
 
         Job definition is nothing but template.
@@ -219,4 +225,24 @@ Matrix strategy for a job:
         To refer the matrix value:
           ${{ matrix.key }}
 
-          
+        No of jobs created on the no of variable declared,
+            For ex: key1: [value1, value2, value3] key2: [value1, value2, value3]
+            Total 3 * 3 = 9 combination of jobs are created.
+
+        By default, all jobs are executed parallely. if any one of job is failed then it will cancel pending jobs and workflow will be failed.
+
+        include: to include additional variable which not mentioned in matrix variable.
+        exclude: to exclude the existing variable.
+
+          strategy:
+            matrix:
+              key1: [value1, value2, value3]
+              key2: [value1, value2, value3]
+            include:
+              - key1: value4
+                key2: value1
+            exclude:  
+              - key1: value2
+                key2: value3
+
+                
