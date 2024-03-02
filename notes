@@ -137,6 +137,11 @@ Working with variables at different level:
         It consists of define the variable and refer the variable.
         Define: Using "env:"
         Reference: using $VARIABLE_NAME or ${{ env.VARIABLE_NAME }} or ${VARIABLE_NAME}
+
+        At workflow level, is available to all jobs and steps.
+        At job level, it is available to all steps with in same job.
+        At step level, it is available only within that steps.
+
         
 
         
