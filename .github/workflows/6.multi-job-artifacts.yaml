@@ -34,5 +34,4 @@ jobs:
                 path: test-folder/test.txt
             - name: to read the artifact file from first job.
               run: | 
-                cd /test-folder
                 cat test.txt
