@@ -25,7 +25,7 @@ jobs:
             - name: run second job first step
               run: echo "run second job first step"
             - name: download artifact which passed in first job.
-              uses: actions/upload-artifact@v4
+              uses: actions/download-artifact@v4
               with:
                 name: artifact-name1
                 path: test.txt
