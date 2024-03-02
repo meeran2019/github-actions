@@ -1,0 +1,18 @@
+## This is 12th example on github actions.
+## Here focussed on matrix strategy.
+
+name: 12. matrix strategy
+on:
+  push:
+  workflow_dispatch:
+jobs:
+    template-job:
+        strategy:
+          matrix:
+            os: [ubuntu-latest, windows-latest]                 # To declare the matrix variable. 
+        runs-on: ${{ matrix.os }}                               # To use the matrix variable. 
+        steps:
+            - name: first step
+              timeout-minutes: 1
+              run: | 
+                echo test 

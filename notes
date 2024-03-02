@@ -203,9 +203,20 @@ Job Concurrency:
 
 Time out:
 
-        It is given at job level or step level.
+        It is given at job level or step level or both.
         timeout-minutes: 1
 
+Matrix strategy for a job:
+
+        Job definition is nothing but template.
+        From template, can create a multiple jobs based on the variable.
+
+        To define matrix: 
+          strategy:
+            matrix:
+              key: [value1, value2, value3]
         
+        To refer the matrix value:
+          ${{ matrix.key }}
 
-
+          
