@@ -31,7 +31,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: artifact-name1
-                path: test-folder/test.txt
+                path: test-folder
             - name: to read the artifact file from first job.
               run: | 
                 cat test.txt
