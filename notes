@@ -197,5 +197,10 @@ Job Concurrency:
         concurrency: 
           group:                        (concurrency group unique name)
           cancel-in-progess: true       (It will cancel existing workflow/job and run new one)
+          cancel-in-progess: false      (It will wait in queue and it is default behaviour)
 
-          
+        If mention in both workflow and job level with same group name, then it will cancel and run the workflow.
+
+Time out:
+
+        
