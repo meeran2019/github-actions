@@ -9,6 +9,9 @@ jobs:
     template-job:
         strategy:
           matrix:
+            include:                                            # To exclude specific combination. 
+              - os: ubuntu-latest
+                fruits: apple            
             exclude:                                            # To exclude specific combination. 
               - os: ubuntu-latest
                 fruits: guava
