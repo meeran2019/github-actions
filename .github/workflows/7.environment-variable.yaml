@@ -14,6 +14,7 @@ jobs:
           JOB_LEVEL_KEY1: job-value1
           JOB_LEVEL_KEY2: job-value2
           WORKFLOW_LEVEL_KEY2: workflow-value-xxxx        # override the workflow one.
+          WORKFLOW_LEVEL_KEY1: workflow-value1-ascr
         runs-on: ubuntu-latest                            # needs which is used to add dependency. 
         steps:
             - name: run first job first step
@@ -24,6 +25,7 @@ jobs:
                 WORKFLOW_LEVEL_KEY2: workflow-value-yyyy
               run: |                                      # first 4 combinations are working. ${} must use along with suffix or prefix
                 echo WORKFLOW_LEVEL_KEY2 is $WORKFLOW_LEVEL_KEY2
+                echo WORKFLOW_LEVEL_KEY1 is $WORKFLOW_LEVEL_KEY1
                 echo JOB_LEVEL_KEY1 is $JOB_LEVEL_KEY1
                 echo "color is $ENV_COLOR"                
                 echo "color is ${ENV_COLOR}"
