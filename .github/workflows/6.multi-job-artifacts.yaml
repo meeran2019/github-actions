@@ -12,12 +12,15 @@ jobs:
             - name: run first job first step
               run: echo "run first job first step"
             - name: create a test file
-              run: touch test.txt
+              run: |                                      # create a directory otherwise fails to download.
+                 mkdir test-folder
+                 cd test-folder
+                 touch test.txt
             - name: upload artifact
               uses: actions/upload-artifact@v4
               with:
                 name: artifact-name1
-                path: /test.txt              
+                path: test-folder/test.txt
     second-job:
         needs: first-job                                  # By default, 2nd job run parallel and separate machine.
         runs-on: ubuntu-latest                            # needs which is used to add dependency. 
@@ -28,6 +31,8 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: artifact-name1
-                path: /test.txt
+                path: test-folder/test.txt
             - name: to read the artifact file from first job.
-              run: cat test.txt
+              run: | 
+                cd /test-folder
+                cat test.txt
