@@ -1,7 +1,10 @@
-## This is ninth example on github actions.
-## Here focussed on to trigger manually and input to pass.
+## This is tenth example on github actions.
+## Here focussed on workflow or job concurrency.
 
-name: 9. manual trigger and input pass
+name: 10. workflow or job concurrency.
+concurrency:
+  group: concur-name
+  cancel-in-progress: true
 on:
   push:
   workflow_dispatch:
@@ -25,6 +28,9 @@ on:
         type: boolean            
 jobs:
     first-job:
+        concurrency: 
+          group: concur-name
+          cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
             - name: first step

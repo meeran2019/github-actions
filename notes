@@ -188,10 +188,14 @@ Triggering a workflow:
                     - cschleiden        
 
           type: It supports string (default), choice, boolean and environment.
+          required: true/false  (By default it is false and not mandatory)
+
+Job Concurrency:
+
+        It ensure single job or workflow runs at a time in same concurrency group.
+        It can enable at workflow or job level.
+        concurrency: 
+          group:                        (concurrency group unique name)
+          cancel-in-progess: true       (It will cancel existing workflow/job and run new one)
 
           
-
-
-
-
-        
