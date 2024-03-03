@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: github context
-        if: github.repository_owner == 'meeran2019'
+        if: github.repository_owner == 'meeran'
         run: |
           echo "The github context is:"
           echo "${{ toJson(github) }}"
