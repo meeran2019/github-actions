@@ -219,6 +219,8 @@ Matrix strategy for a job:
         Job definition is nothing but template.
         From template, can create a multiple jobs based on the variable.
 
+        IT IS USEFUL IN UNIT TESTING JOB, TO RUN AT DIFFERENT OS AND VERSIONS.
+
         To define matrix: 
           strategy:
             matrix:
@@ -306,7 +308,7 @@ Cancelling and Skipping workflows:
 Environment:
 
         Can create the environment for the separate protection rules and keep the variables/secrets.
-        
+
 -----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
