@@ -292,3 +292,15 @@ Workflow event filters and Activity type:
                   - 'v1.*'
                   - 'v2.*'
 
+Cancelling and Skipping workflows:
+
+        While doing commit, can instruct not to run the workflow.
+        Below are the valid values to include along with commit message,
+            [skip ci]
+            [ci skip]
+            [no ci]
+            [skip actions]
+            [actions skip]
+            skip-checks: true
+
+        
