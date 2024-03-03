@@ -13,8 +13,8 @@ on:
     paths:
       - 'src/**'                    # Trigger only when change in src and all its sub directories.
       - 'src/*'                     # Trigger only when change in src and immediate sub directory.
-    paths-ignore:
-      - 'README.md'                 # Ignore this changes
+    # paths-ignore:
+    #   - 'README.md'                 # Ignore this changes. Either path or path-ignore only can maintain.
 jobs:
   if-expression:
     name: workflow filter and activity type
