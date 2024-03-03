@@ -21,4 +21,5 @@ jobs:
               if: failure()                         
             - name: third message
               run: echo "my third message"          # default success() and this get skipped and overall job failed. 
+              if: always()
                               
