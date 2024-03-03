@@ -53,7 +53,6 @@ There are 3 main components,
         - name: Run tests
           run: npm test
     
-
 Create first workflow:
 
         1. Create the directory under root-repository/.github/worklows/example.yaml 
@@ -261,23 +260,28 @@ Access workflow context information:
 
         https://docs.github.com/en/actions/learn-github-actions/contexts
 
-
 Using expression:        
 
         There are many expression which support for the conditioning.
 
         IF condition can be given only at Step and Job level not workflow level.
 
-        .   property reference    (github.repository_owner)
-        !   Not
-        ||  OR
-        &&  AND
-        !=  Not Equal
-        ==  Equal
-        >=  Greater than equal
-        >   Greater than
-        <   Less than
-        <=  Less than equal
+            .   property reference    (github.repository_owner)
+            !   Not
+            ||  OR
+            &&  AND
+            !=  Not Equal
+            ==  Equal
+            >=  Greater than equal
+            >   Greater than
+            <   Less than
+            <=  Less than equal
+
+        Status Check Functions which commonly used are,
+            success()       -> used to check status of previous job or step.
+            failure()       -> used to check status of previous job or step.
+            cancelled()     -> used to check whether current job or step is cancelled.
+            always()        -> used to run always irrespective of previous job or step.
 
 Workflow event filters and Activity type:
 
@@ -333,9 +337,6 @@ continue-on-error:
                 run: exit 1
                 continue-on-error: true
 
-
 -----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
-        
-
