@@ -8,6 +8,8 @@ Execute tasks in virtual environment.
 Git Repo -> Actions tab
 Can enable or disable workflow in github UI.
 
+Install the github actions plugin Visual Studio code. By CTRL + SPACE gives the available property.
+
 repo-root/.github/workflows/name.yaml   -> Workflows are created in this path. 
 
 It consists of,
@@ -314,8 +316,9 @@ Cancelling and Skipping workflows:
 Artifacts vs dependency caching: 
 
         Both are ability to store file in github.
-        Use caching, when files dont change and wanted to reuse across jobs and steps.
+        Use caching, when files dont change and wanted to reuse across workflow.
         Use artifacts, when to see the files after workflow is completed.
+        List of cache stored can seen from UI and reused if run workflow again.
 
 Cache Dependencies to speedup workflow:
 
@@ -323,13 +326,23 @@ Cache Dependencies to speedup workflow:
         In Input, consists of:
             key: name to identify the cache.
             path: files/folder to cache.
-            
 
+        Cache can be stored, restored and saved.
 
+        Cache can be invalidated by deleting the cache from UI or by change in cache key.
 
 Environment:
 
         Can create the environment for the separate protection rules and keep the variables/secrets.
+
+GITHUB_TOKEN:
+
+        At start of each workflow, github automatically creates GITHUB_TOKEN secret to use in the workflow.
+        This token is available in github.token context and referred by ${{ secrets.GITHUB_TOKEN }}
+        Its validity for the workflow running time or maximum of 24 hours.
+
+        For default permission, refer the page https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+
 
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
@@ -356,6 +369,21 @@ continue-on-error:
                 continue-on-error: true
 
 -----------------------------------------------------------------------------------------------------------
+Functions:
+-----------------------------------------------------------------------------------------------------------
+
+        hashfiles('filename')     -> Output is hash value of file. If any changes in file, new hash value is generated.
+
+-----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
+
+        Below are the commonly used pre build actions,
+            checkout
+            upload-artifact
+            download-artifact
+            cache
+            docker/login-action (for dockerhub)
+            aws-actions/amazon-ecr-login (for aws ecr)
+            docker/build-push-action
 

@@ -1,0 +1,13 @@
+name: 18. GITHUB_TOKEN Permission
+on: 
+  push:
+  workflow_dispatch: 
+jobs:
+    first-job:
+        permissions:                                  # Permissions are given at job level
+          repository-projects: write
+        runs-on: ubuntu-latest
+        steps:                                      
+            - name: welcome message
+              run: |
+                echo ${{ secrets.GITHUB_TOKEN }}
