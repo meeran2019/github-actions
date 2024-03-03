@@ -32,6 +32,7 @@ jobs:
               with:
                 name: artifact-name1
                 path: test-folder
+                retention: 5                              # can give retention in days for available.
             - name: to read the artifact file from first job.     
               run: |                                      # give the full path to download directory.
                 cat test-folder/test.txt

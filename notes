@@ -266,6 +266,8 @@ Using expression:
 
         There are many expression which support for the conditioning.
 
+        IF condition can be given only at Step and Job level not workflow level.
+
         .   property reference    (github.repository_owner)
         !   Not
         ||  OR
@@ -310,6 +312,30 @@ Environment:
         Can create the environment for the separate protection rules and keep the variables/secrets.
 
 -----------------------------------------------------------------------------------------------------------
+Error Handling:
+-----------------------------------------------------------------------------------------------------------
+
+continue-on-error:
+
+        It is given at job or step level but not workflow level.
+        Continue the next step or job eventhough failure.
+
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+            continue-on-error: true
+
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+            steps:
+              - name: Step 2
+                run: exit 1
+                continue-on-error: true
+
+
+-----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
         
+
