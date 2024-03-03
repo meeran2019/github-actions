@@ -1,12 +1,14 @@
-name: 14. if expressions
-on: [push]
+name: 15. Workflow filter and activity type.
+on:
+  push:
+    branches: [feature]
 jobs:
   if-expression:
     name: if expression
     runs-on: ubuntu-latest
     steps:
       - name: github context
-        if: github.repository_owner == 'meeran'
+        if: github.repository_owner == 'meeran2019'
         run: |
           echo "The github context is:"
           echo "${{ toJson(github) }}"
@@ -44,3 +46,4 @@ jobs:
         run: |          
           echo "The matrix context is:"
           echo "${{ toJson(matrix) }}"
+          

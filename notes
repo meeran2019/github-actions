@@ -260,6 +260,35 @@ Access workflow context information:
         https://docs.github.com/en/actions/learn-github-actions/contexts
 
 
-Using if expression:        
+Using expression:        
 
-        
+        There are many expression which support for the conditioning.
+
+        .   property reference    (github.repository_owner)
+        !   Not
+        ||  OR
+        &&  AND
+        !=  Not Equal
+        ==  Equal
+        >=  Greater than equal
+        >   Greater than
+        <   Less than
+        <=  Less than equal
+
+Workflow event filters and Activity type:
+
+        Activity type is additonal status available withrespect to event trigger.
+        For example: with pull_request event, have below activity types,
+            assigned, closed, reopened, opened, locked, unloacked etc.
+
+        Filters are used to include and exclude based on property.
+        For example: in below, filtered based on branch and tags.
+            on:
+              push:
+                branches:
+                  - master
+                  - 'release-*'
+                tags:
+                  - 'v1.*'
+                  - 'v2.*'
+
