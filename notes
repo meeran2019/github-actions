@@ -112,6 +112,7 @@ Workflow with Multiple Jobs:
             needs: [job1, job2]
 
 Storing workflow data as Artifacts:
+
         To pass data between jobs, it require to use the shared action.
             Upload a Build artifact
             Download a Build artifact.
@@ -343,6 +344,12 @@ GITHUB_TOKEN:
 
         For default permission, refer the page https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
 
+        By default only have read permission. This can be check in "Set up Job" step. Permisison can be override at job level.
+
+          jobs:
+            first-job:
+                permissions:                                 
+                  repository-projects: write
 
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
@@ -387,3 +394,4 @@ Continuos Integration with GitHub Actions
             aws-actions/amazon-ecr-login (for aws ecr)
             docker/build-push-action
 
+-----------------------------------------------------------------------------------------------------------
