@@ -16,8 +16,9 @@ jobs:
         steps:                                      
             - name: welcome message
               run: exit 1
-            - name: second message
+            - name: second message                  # it will be executed only previous steps are failed. always() can be used to run always.
               run: echo "my second message"              
-              if: failure()
+              if: failure()                         
             - name: third message
-              run: echo "my third message"                            
+              run: echo "my third message"          # default success() and this get skipped and overall job failed. 
+                              
