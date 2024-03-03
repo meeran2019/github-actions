@@ -1,10 +1,10 @@
-name: 15. Workflow filter and activity type.
+name: 15. Workflow filter and activity type
 on:
   push:
     branches: [feature]
 jobs:
   if-expression:
-    name: if expression
+    name: workflow filter and activity type
     runs-on: ubuntu-latest
     steps:
       - name: github context
