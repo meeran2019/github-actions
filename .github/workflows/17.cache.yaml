@@ -5,7 +5,6 @@ on:
   workflow_dispatch: 
 jobs:
     first-job:
-        continue-on-error: false                    # if true, It make the workflow successful. 
         runs-on: ubuntu-latest
         steps:                                      
             - name: welcome message
@@ -17,3 +16,14 @@ jobs:
               with:
                 path: test.txt
                 key: cache-test
+    second-job:
+        runs-on: ubuntu-latest
+        steps:                                      
+            - name: restore cache
+              uses: actions/cache@v4
+              with:
+                path: test.txt
+                key: cache-test                
+            - name: read cache
+              run: |
+                ls -ltr
