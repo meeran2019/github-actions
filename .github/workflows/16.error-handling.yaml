@@ -1,0 +1,23 @@
+
+name: 16. Error handling
+on: push
+jobs:
+    first-job:
+        continue-on-error: false                    # if true, It make the workflow successful. 
+        runs-on: ubuntu-latest
+        steps:                                      
+            - name: welcome message
+              run: echo "my first workflow"
+              continue-on-error: true               # It make the job successful.
+            - name: second message
+              run: echo "my second message"
+    second-job:
+        runs-on: ubuntu-latest
+        steps:                                      
+            - name: welcome message
+              run: exit 1
+            - name: second message
+              run: echo "my second message"              
+              if: failure()
+            - name: third message
+              run: echo "my third message"                            

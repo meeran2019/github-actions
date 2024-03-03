@@ -278,7 +278,7 @@ Using expression:
             <=  Less than equal
 
         Status Check Functions which commonly used are,
-            success()       -> used to check status of previous job or step.
+            success()       -> used to check status of previous job or step. It is default one.
             failure()       -> used to check status of previous job or step.
             cancelled()     -> used to check whether current job or step is cancelled.
             always()        -> used to run always irrespective of previous job or step.
@@ -323,6 +323,8 @@ continue-on-error:
 
         It is given at job or step level but not workflow level.
         Continue the next step or job eventhough failure.
+        If given at job level, it prevents workflow from failing.
+        If given at step level, it prevents job from failing.
 
         jobs:
           build:
@@ -340,3 +342,4 @@ continue-on-error:
 -----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
+
