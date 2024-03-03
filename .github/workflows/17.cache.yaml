@@ -1,0 +1,19 @@
+
+name: 17. Caching
+on: 
+  push:
+  workflow_dispatch: 
+jobs:
+    first-job:
+        continue-on-error: false                    # if true, It make the workflow successful. 
+        runs-on: ubuntu-latest
+        steps:                                      
+            - name: welcome message
+              run: |
+                echo "my first workflow" > test.txt
+                ls -ltr
+            - name: cache
+              uses: actions/cache@v4
+              with:
+                path: test.txt
+                key: cache-test

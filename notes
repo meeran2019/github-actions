@@ -311,6 +311,22 @@ Cancelling and Skipping workflows:
             [actions skip]
             skip-checks: true
 
+Artifacts vs dependency caching: 
+
+        Both are ability to store file in github.
+        Use caching, when files dont change and wanted to reuse across jobs and steps.
+        Use artifacts, when to see the files after workflow is completed.
+
+Cache Dependencies to speedup workflow:
+
+        It uses the cache action.
+        In Input, consists of:
+            key: name to identify the cache.
+            path: files/folder to cache.
+            
+
+
+
 Environment:
 
         Can create the environment for the separate protection rules and keep the variables/secrets.
