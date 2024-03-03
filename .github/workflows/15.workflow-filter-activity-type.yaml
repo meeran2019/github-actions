@@ -1,7 +1,7 @@
 name: 15. Workflow filter and activity type
 on:
   push:
-    branches: [feature]
+    branches: [feature, main]
 jobs:
   if-expression:
     name: workflow filter and activity type
