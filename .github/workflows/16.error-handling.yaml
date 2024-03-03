@@ -16,6 +16,7 @@ jobs:
         steps:                                      
             - name: welcome message
               run: exit 1
+              continue-on-error: true
             - name: second message                  # it will be executed only previous steps are failed. always() can be used to run always.
               run: echo "my second message"              
               if: failure()                         
