@@ -1,3 +1,5 @@
+## In "Set up Job" step, can see the GITHUB_TOKEN Permissions.
+
 name: 18. GITHUB_TOKEN Permission
 on: 
   push:
