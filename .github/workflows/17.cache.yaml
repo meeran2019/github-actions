@@ -28,3 +28,16 @@ jobs:
             - name: read cache
               run: |
                 ls -ltr
+    third-job:
+        runs-on: ubuntu-latest
+        needs: second-job
+        steps:                                      
+            - name: save cache
+              uses: actions/cache@v4
+              id: cache-test-1
+              with:
+                path: test.txt
+                key: cache-test                
+            - name: read cache
+              run: |
+                ls -ltr                
