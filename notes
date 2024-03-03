@@ -227,7 +227,7 @@ Matrix strategy for a job:
         To refer the matrix value:
           ${{ matrix.key }}
 
-        No of jobs created on the no of variable declared,
+        No of jobs created is based on the no of variable declared,
             For ex: key1: [value1, value2, value3] key2: [value1, value2, value3]
             Total 3 * 3 = 9 combination of jobs are created.
 
@@ -303,6 +303,10 @@ Cancelling and Skipping workflows:
             [actions skip]
             skip-checks: true
 
+Environment:
+
+        Can create the environment for the separate protection rules and keep the variables/secrets.
+        
 -----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
