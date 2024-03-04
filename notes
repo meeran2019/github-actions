@@ -373,9 +373,8 @@ Job Container vs Service Container:
         Job container enables the same runtime or application across the environment. Act as docker host.
         Service container enables the testing or integration with external dependencies.
 
-        
-
-
+        Without job container: call service by localhost:port 
+        With job container: It is like container (job) to container (service) communication. Docker containers runs on same user defined bridge network expose all ports to each other. So no need of call by local host but instead access the service using label.
 
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
@@ -421,3 +420,6 @@ Continuos Integration with GitHub Actions
             docker/build-push-action
 
 -----------------------------------------------------------------------------------------------------------
+Continuos Deployment with GitHub Actions
+-----------------------------------------------------------------------------------------------------------
+
