@@ -351,6 +351,13 @@ GITHUB_TOKEN:
                 permissions:                                 
                   repository-projects: write
 
+Job Container:
+
+        It helps to run a job in a container.
+        It helps to run a application that is preinstalled with required software packages.
+        NOTE: job container, service container and docker container action runs on Linux runner only not windows.
+        
+
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
 -----------------------------------------------------------------------------------------------------------
