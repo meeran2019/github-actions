@@ -7,8 +7,10 @@ jobs:
   service-container:
     runs-on: ubuntu-latest
     services:                           # Since no container property, it runs on ubuntu-latest server. 
-      redis:                            # Service LABEL.
+      redis:                            
         image: redis 
+        options: 
+          -- name redis                 # To define label. 
         ports:
           - 6379:6379
     steps:

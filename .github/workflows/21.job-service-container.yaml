@@ -6,13 +6,15 @@ on:
 jobs:  
   job-service-container:
     runs-on: ubuntu-latest
-    container:                          # Primary job is running on container with this image. This is Docker host.  
+    container:                          # Primary job is running on container with this image. This is Docker host.
       image: ubuntu:latest
     services:                           # It also call another service container while execution. 
-      redis:                            # Service LABEL.
+      redis:                            
         image: redis 
-        ports:
-          - 6379:6379
+        options: 
+          -- name redis                 # To define label in service.
+        # ports:                        # For container to container communication, no need of port.
+        #   - 6379:6379
     steps:
     - uses: actions/checkout@main
     - name: run ls
