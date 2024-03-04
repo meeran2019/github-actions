@@ -423,3 +423,7 @@ Continuos Integration with GitHub Actions
 Continuos Deployment with GitHub Actions
 -----------------------------------------------------------------------------------------------------------
 
+        Below are the commonly used pre build actions,
+            azure/setup-kubectl@v3
+            azure/k8s-set-context@v3
+            
