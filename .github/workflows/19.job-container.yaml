@@ -1,4 +1,4 @@
-name: Container Job
+name: 19. Container Job
 on:
   push:
 env:
@@ -7,9 +7,9 @@ jobs:
   container:
     runs-on: ubuntu-latest
     container:
-      image: 'ubuntu:20.04' # can also use this to test
-      # image: 'ghcr.io/${{ github.repository }}:latest'
-      # credentials:
+      image: 'ubuntu:20.04'                                   # It uses public docker hub. 
+      # image: 'ghcr.io/${{ github.repository }}:latest'      # It uses github image. 
+      # credentials:                                          # If private registry, require credentials. 
       #    username: ${{ github.ref }}
       #    password: ${{ secrets.GITHUB_TOKEN }}
       env: 

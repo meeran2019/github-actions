@@ -356,7 +356,26 @@ Job Container:
         It helps to run a job in a container.
         It helps to run a application that is preinstalled with required software packages.
         NOTE: job container, service container and docker container action runs on Linux runner only not windows.
+
+        runs-on: Here mention the runner to run. Act as a docker host.
+
+Service Container:
+
+        It is an additional container environment that can be linked to job container.
+        It provide additional services or dependencies.These services can be cache, database or other external services.
+        It is typically used for settingup infrastructure or dependencies that job needs to communicate during its execution. 
+
+Job Container vs Service Container:
+
+        Job container is to define the primary runtime of the job. 
+        Service container is to provide additional services or dependencies.
+
+        Job container enables the same runtime or application across the environment. Act as docker host.
+        Service container enables the testing or integration with external dependencies.
+
         
+
+
 
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
