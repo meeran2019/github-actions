@@ -9,9 +9,9 @@ jobs:
     container:
       image: 'ubuntu:20.04' # can also use this to test
       # image: 'ghcr.io/${{ github.repository }}:latest'
-      credentials:
-         username: ${{ github.ref }}
-         password: ${{ secrets.GITHUB_TOKEN }}
+      # credentials:
+      #    username: ${{ github.ref }}
+      #    password: ${{ secrets.GITHUB_TOKEN }}
       env: 
         actor: ${{ github.actor }}
         testjob: here is value
