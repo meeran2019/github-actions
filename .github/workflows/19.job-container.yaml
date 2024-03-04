@@ -4,7 +4,7 @@ on:
 env:
   test: value
 jobs:  
-  container:
+  job-container:
     runs-on: ubuntu-latest
     container:
       image: 'ubuntu:20.04'                                   # It uses public docker hub. 

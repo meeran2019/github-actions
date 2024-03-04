@@ -2,7 +2,7 @@ name: 21. Job Service Container
 on:
   push:
 jobs:  
-  service-example:
+  job-service-container:
     runs-on: ubuntu-latest
     container:                          # Primary job is running on container with this image. This is Docker host.  
       image: ubuntu:latest
