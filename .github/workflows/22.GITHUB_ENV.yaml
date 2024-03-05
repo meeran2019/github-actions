@@ -1,0 +1,25 @@
+
+name: 22. GITHUB_ENV file for Environment variabe.
+on: 
+  workflow_dispatch:
+  push:
+env:
+  WORKFLOW_LEVEL_KEY1: workflow-value1
+  WORKFLOW_LEVEL_KEY2: workflow-value-2
+jobs:              
+    first-job:
+        runs-on: ubuntu-latest                            
+        steps:
+            - name: run first job first step
+              run: |                                      
+                echo WORKFLOW_LEVEL_KEY2 is $WORKFLOW_LEVEL_KEY2
+                echo "dynamic-env-key=test-value" >> "$GITHUB_ENV"
+            - name: run first job second step.
+              run: | 
+                echo value from step 1 dynamic variable is $dynamic-env-key=test-value
+    second-job:
+        runs-on: ubuntu-latest                            
+        steps:
+            - name: to test whether GITHUB_ENV is population another job or not.
+              run: | 
+                echo value from step 1 dynamic variable is $dynamic-env-key=test-value

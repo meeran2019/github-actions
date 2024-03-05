@@ -376,6 +376,14 @@ Job Container vs Service Container:
         Without job container: call service by localhost:port 
         With job container: It is like container (job) to container (service) communication. Docker containers runs on same user defined bridge network expose all ports to each other. So no need of call by local host but instead access the service using label.
 
+GITHUB_ENV:
+
+        echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
+        Can make environment variable available to subsequent steps in workflow job by defining or updating environment variable and writing to this GITHUB_ENV file.
+        The step creates/updates does not have access to this environment variable but subsequent steps can access.
+        
+
+
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
 -----------------------------------------------------------------------------------------------------------
@@ -425,5 +433,7 @@ Continuos Deployment with GitHub Actions
 
         Below are the commonly used pre build actions,
             azure/setup-kubectl@v3
-            azure/k8s-set-context@v3
+            azure/k8s-set-context@v3   (store kubeconfig as secrets)
+            cschleiden/replace-token@v1
+
             
