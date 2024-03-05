@@ -387,7 +387,34 @@ GITHUB_OUTPUT:
 
 -----------------------------------------------------------------------------------------------------------
 
+Environments:
 
+        It helps to isolate environment like dev, qa, prod etc.
+        Each environment have own services and own credentials.
+        
+        Repository level secrets/variables available across repo.
+        Credentials are visible to all users (public)
+        All jobs can access in workflow.
+
+        Environment level secrets/variables available at environment level.
+        Credentials are visible to all users but can make private.
+        Only jobs running within that environment can access.
+
+        ENVIRONMENTAL LEVEL SECRETS/VARIABLE ARE HIGHER PRECEDENCE THAN REPOSITORY LEVEL SECRETS/VARIABLE.
+
+        It also gives deployment protection rules like,
+              Manual deployment     (required reviewers)
+              Delay deployment      (wait timer)
+              Restrict deployment   (deployment branches and tags)
+
+        env: It is used to set the environment variable.
+        environment: It is used to set the github environment like develop, qa etc.
+
+        Below is given at job level to specify which environment to run.
+
+          environment:
+            name: development
+            url: https://xxx.com        (This URL is displaying in workflow screen)
 
 -----------------------------------------------------------------------------------------------------------
 Error Handling:
