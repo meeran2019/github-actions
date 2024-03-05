@@ -18,7 +18,8 @@ jobs:
               run: | 
                 echo value from step 1 dynamic variable is $dynamic-env-key
     second-job:
-        runs-on: ubuntu-latest                            
+        runs-on: ubuntu-latest           
+        needs: first-job                 
         steps:
             - name: to test whether GITHUB_ENV is population another job or not.
               run: | 
