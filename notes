@@ -445,6 +445,7 @@ Functions:
 -----------------------------------------------------------------------------------------------------------
 
         hashfiles('filename')     -> Output is hash value of file. If any changes in file, new hash value is generated.
+        contains(github.ref, 'feature/')  -> it checks whether current brnch have feature.
 
 -----------------------------------------------------------------------------------------------------------
 Continuos Integration with GitHub Actions
@@ -466,6 +467,4 @@ Continuos Deployment with GitHub Actions
         Below are the commonly used pre build actions,
             azure/setup-kubectl@v3
             azure/k8s-set-context@v3   (store kubeconfig as secrets)
-            cschleiden/replace-token@v1
-
-            
+            cschleiden/replace-token@v1          
