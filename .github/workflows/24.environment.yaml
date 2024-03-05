@@ -6,7 +6,7 @@ jobs:
   dev-environment-job:
     environment: 
       name: develop
-      url: dev url to display in workflow
+      url: https://dev-url.coms
     runs-on: ubuntu-latest
     steps:
       - name: step1
@@ -21,11 +21,11 @@ jobs:
   prod-environment-job:
     environment: 
       name: production
-      url: prod url to display in workflow
+      url: https://prod-url.com
     runs-on: ubuntu-latest
     steps:
       - name: step1
-        run: |                      # 
+        run: |                      # In below, develop environment cant fetch since production environment defined. It display repo level secrets/variables.
           echo "test"
           echo Environment level ENV_DEV_KEY1 ${{ secrets.ENV_DEV_KEY1 }}
           echo Environment level ENV_DEV_VAR_KEY1 ${{ vars.ENV_DEV_VAR_KEY1 }}
