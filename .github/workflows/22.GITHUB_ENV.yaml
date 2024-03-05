@@ -10,16 +10,16 @@ jobs:
     first-job:
         runs-on: ubuntu-latest                            
         steps:
-            - name: run first job first step
-              run: |                                      
-                echo "{dynamic-env-key}={test-value}" >> "$GITHUB_ENV"
+            - name: run first job first step    
+              run: |                              # NOTE: - (hyphen) cannot work and use underscore.              
+                echo "dynamic_env_key=test_value" >> "$GITHUB_ENV"      
             - name: run first job second step.
               run: | 
-                echo value from step 1 dynamic variable is ${dynamic-env-key}
+                echo value from step 1 dynamic variable is $dynamic_env_key
     second-job:
         runs-on: ubuntu-latest           
         needs: first-job                 
         steps:
             - name: to test whether GITHUB_ENV is population another job or not.
               run: | 
-                echo value from step 1 dynamic variable is $dynamic-env-key
+                echo value from step 1 dynamic variable is $dynamic_env_key
