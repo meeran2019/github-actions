@@ -11,7 +11,7 @@ jobs:
               run: |                              # NOTE: - (hyphen) cannot work and use underscore.              
                 echo "dynamic_env_key=test_value" >> "$GITHUB_ENV"      
             - name: run first job second step.
-              run: | 
+              run: |                              # Below are the 2 ways to retrive the values.
                 echo value from step 1 dynamic variable is $dynamic_env_key
                 echo value from step 1 dynamic variable using env is  ${{ env.dynamic_env_key }}
     second-job:

@@ -332,10 +332,6 @@ Cache Dependencies to speedup workflow:
 
         Cache can be invalidated by deleting the cache from UI or by change in cache key.
 
-Environment:
-
-        Can create the environment for the separate protection rules and keep the variables/secrets.
-
 GITHUB_TOKEN:
 
         At start of each workflow, github automatically creates GITHUB_TOKEN secret to use in the workflow.
@@ -378,10 +374,19 @@ Job Container vs Service Container:
 
 GITHUB_ENV:
 
-        echo "{environment_variable_name}={value}" >> "$GITHUB_ENV"
+        echo "environment_variable_name=value" >> "$GITHUB_ENV"   (To define)
+        ${{ env.environment_variable_name }}                      (To refer)
         Can make environment variable available to subsequent steps in workflow job by defining or updating environment variable and writing to this GITHUB_ENV file.
         The step creates/updates does not have access to this environment variable but subsequent steps can access.
-        
+
+GITHUB_OUTPUT:
+
+        It helps to pass dynamic variable from one stop in one job to another step in another job.
+        echo "test=hello" >> "$GITHUB_OUTPUT" and use outputs (To define the value)
+        ${{needs.job1.outputs.output1}}                       (To refer the value)
+
+-----------------------------------------------------------------------------------------------------------
+
 
 
 -----------------------------------------------------------------------------------------------------------
