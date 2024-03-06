@@ -1,0 +1,16 @@
+name: 25. Self Hosted Runner
+on: 
+  workflow_dispatch:
+  push:
+jobs:
+  self-hosted-job:
+    runs-on: self-hosted
+    steps:
+      - name: step1
+        run: |                    
+          echo "test"
+          echo Environment level ENV_DEV_KEY1 ${{ secrets.ENV_DEV_KEY1 }}
+          echo Environment level ENV_DEV_VAR_KEY1 ${{ vars.ENV_DEV_VAR_KEY1 }}
+          echo Repo level MY_SECRET_VALUE1 ${{ secrets.MY_SECRET_VALUE1 }}
+          echo Repo level MY_VARIABLE1 ${{ vars.MY_VARIABLE1 }}
+          echo Prod Environment secret ${{ secrets.PROD_SECRET }}

@@ -470,7 +470,42 @@ Continuos Deployment with GitHub Actions
             cschleiden/replace-token@v1          
 
 -----------------------------------------------------------------------------------------------------------
-Self Hosted Runners:
+Runners:
 -----------------------------------------------------------------------------------------------------------
 
-          
+Types of Runners:
+
+        Runner is virtual machine on which workflow is running.
+
+        There are 2 types,
+            Github Hosted:
+                Standard, Enterprise and beta GPU-enabled github runner
+            Self Hosted:
+                User can run on own runner.
+        
+        Self Hosted Runner:
+            User deploy own machine and run the workflow.
+            It gives, 
+                Custom execution environment.
+                Controlled environment for security.
+                Eliminates wait time.
+                Scalability depends upon need.
+                Reduced Latency in CICD workflow.
+
+        Self hosted runner can be added at organization or repository or enterprise.
+
+Self hosted runner Installation:
+
+        In Linux 2 ec2, install the below packages,
+
+          sudo yum update -y && \
+          sudo yum install docker -y && \
+          sudo yum install git -y && \
+          sudo yum install libicu -y && \
+          sudo systemctl enable docker
+
+        Then follow the steps given in github to procees.
+
+        Runner Group cannot be create at repository level.
+
+        
