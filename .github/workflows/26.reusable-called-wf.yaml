@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/labeler@v4
         with:
-          repo_token: ${{ secrets.aws_pwd }}
-          configuration_path: ${{ inputs.region }}
+          repo-token: ${{ secrets.aws_pwd }}
+          configuration-path: ${{ inputs.region }}
       - name: display output
         run: | 
-          echo repo-token is $repo_token
-          echo configuration-path is $configuration_path
+          echo repo-token is ${repo-token}
+          echo configuration-path is ${configuration-path}
