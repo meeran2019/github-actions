@@ -7,6 +7,8 @@ jobs:
     uses: ./.github/workflows/26.reusable-called-wf.yaml
     secrets:
       aws_pwd: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      region: us-east-1
 
         
 
