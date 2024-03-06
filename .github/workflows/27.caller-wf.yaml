@@ -5,5 +5,10 @@ on:
 jobs:
   caller-job:
     uses: ./.github/workflows/26.reusable-called-wf.yaml
+    with:
+      region: .github/labeler.yml
+    secrets:
+      aws_pwd: ${{ secrets.GITHUB_TOKEN }}
+
         
 

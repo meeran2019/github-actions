@@ -3,16 +3,22 @@ on:
   workflow_call: 
     inputs:
       region:
-        required: false
+        required: true
         type: string
     secrets:
       aws_pwd:
         description: enter the pwd
-        required: false
+        required: true
 jobs:
   called-job:
     runs-on: ubuntu-latest
     steps:
-      - name: step1          
-        run: |                    
-          echo "test"
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.aws_pwd }}
+          configuration-path: ${{ inputs.region }}
+      - name: display output
+        run: | 
+          echo repo-token is $repo-token
+          echo configuration-path is $configuration-path
+          

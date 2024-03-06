@@ -555,6 +555,7 @@ Reusable workflow:
           uses: organization/repo/.github/workflows/reusable-workflow.yml   (If different repo)
 
         To define inputs or outputs or secrets that passed from caller workflow.
+        By default, secrets or variables are cannot be used directly from called workflow and must pass from caller to called workflow.
 
             In called workflow: 
 
@@ -579,7 +580,7 @@ Reusable workflow:
                       configuration-path: ${{ inputs.config-path }}              
 
 
-            In called workflow: 
+            In called workflow (different organization): 
 
               jobs:                                       (To pass from caller workflow)
                 call-workflow-passing-data:
@@ -588,4 +589,13 @@ Reusable workflow:
                     config-path: .github/labeler.yml
                   secrets:
                     envPAT: ${{ secrets.envPAT }}
+
+            In called workflow (same organization): 
+
+                jobs:
+                  call-workflow-passing-data:
+                    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+                    with:
+                      config-path: .github/labeler.yml
+                    secrets: inherit
         
