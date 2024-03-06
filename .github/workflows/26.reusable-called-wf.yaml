@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: step1
         run: | 
-          echo aws_pwd is $aws_pwd
+          echo aws_pwd is ${{ secrets.aws_pwd }}
