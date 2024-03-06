@@ -513,4 +513,79 @@ Other details in runner:
         _diag/  -> Contains logs in self hosted machine.
         _work/  -> Gives details on workflow execution.
 
------------------------------------------------------------------------------------------------------------        
+-----------------------------------------------------------------------------------------------------------
+Security:
+-----------------------------------------------------------------------------------------------------------
+
+Security Hardening:
+
+        Save credentials as secrets.
+        Secrets are masked in logs.
+        OpenID connect support with cloud providers.
+        Use github verified actions or own actions.
+
+Script Injection Attack:
+
+        In comments or title, whatever command given within "; commands" will be executed.
+              ";ls $GITHUB_WORKSPACE"
+
+        To prevent this, instead of directly refer the variable in run command. Pass this input to env variable which store as inmemory and from there refer in run command.
+
+Workflow Status batch:
+
+        Actions -> Action Name -> ... -> Create Status batch.
+
+            Branch, Event -> Copy status batch.
+
+-----------------------------------------------------------------------------------------------------------
+Reusable workflows and reporting:
+-----------------------------------------------------------------------------------------------------------
+
+Reusable workflow:
+
+        It helps to reuse the workflow and no need to write the code multiple times.
+
+        on:                             (To define the resuable workflow/called workflow)
+          workflow_call:
+
+
+        dev-deploy:                     (To call the reusable workflow/caller workflow)
+          needs: [first-job]
+          uses: ./.github/workflows/reusable-workflow.yaml                  (If same repo)
+          uses: organization/repo/.github/workflows/reusable-workflow.yml   (If different repo)
+
+        To define inputs or outputs or secrets that passed from caller workflow.
+
+            In called workflow: 
+
+              on:                                       (To define in called)
+                workflow_call:
+                  inputs:
+                    config-path:
+                      required: true
+                      type: string
+                  secrets:
+                    envPAT:
+                      required: true
+
+              jobs:                                    (To refer in called)
+                reusable_workflow_job:
+                  runs-on: ubuntu-latest
+                  environment: production
+                  steps:
+                  - uses: actions/labeler@v4
+                    with:
+                      repo-token: ${{ secrets.envPAT }}
+                      configuration-path: ${{ inputs.config-path }}              
+
+
+            In called workflow: 
+
+              jobs:                                       (To pass from caller workflow)
+                call-workflow-passing-data:
+                  uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
+                  with:                                    ( For inputs, use with)
+                    config-path: .github/labeler.yml
+                  secrets:
+                    envPAT: ${{ secrets.envPAT }}
+        
