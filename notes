@@ -508,4 +508,9 @@ Self hosted runner Installation:
 
         Runner Group cannot be create at repository level.
 
-        
+Other details in runner:
+
+        _diag/  -> Contains logs in self hosted machine.
+        _work/  -> Gives details on workflow execution.
+
+-----------------------------------------------------------------------------------------------------------        
