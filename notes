@@ -600,3 +600,5 @@ Reusable workflow:
                       config-path: .github/labeler.yml
                     secrets: inherit
         
+        OUTPUT is helpful to transfer data from called to caller workflow.
+

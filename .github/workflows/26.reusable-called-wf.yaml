@@ -1,4 +1,4 @@
-name: 26. Reusable or called workflow.
+name: 26. Reusable or called workflow for secrets and inputs(env variable)
 on: 
   workflow_call: 
     secrets:                                          ## To get the secret from caller workflow. 

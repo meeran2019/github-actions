@@ -1,4 +1,4 @@
-name: 27. Caller workflow
+name: 27. Caller workflow for secrets and inputs (env var).
 on: 
   push: 
   workflow_dispatch: 
