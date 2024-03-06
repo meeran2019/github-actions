@@ -1,0 +1,17 @@
+name: 28. Reusable or called workflow for output
+on: 
+  workflow_call:     
+    outputs:
+      from_reusable_wf_1:
+        description: output from called workflow
+        value: "test-value-1"
+      from_reusable_wf_2:
+        description: output from called workflow 2
+        value: "test-value-2"        
+jobs:
+  called-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: |                                        
+          echo test
