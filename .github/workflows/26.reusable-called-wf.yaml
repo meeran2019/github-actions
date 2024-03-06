@@ -1,10 +1,6 @@
 name: 26. Reusable or called workflow.
 on: 
   workflow_call: 
-    inputs:
-      region:
-        required: true
-        type: string
     secrets:
       aws_pwd:
         description: enter the pwd
@@ -13,11 +9,6 @@ jobs:
   called-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.aws_pwd }}
-          configuration-path: ${{ inputs.region }}
-      - name: display output
+      - name: step1
         run: | 
-          echo repo-token is ${repo-token}
-          echo configuration-path is ${configuration-path}
+          echo aws_pwd is $aws_pwd
